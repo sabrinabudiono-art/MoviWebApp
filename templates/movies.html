@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>My Favorite Movies</h1>
+
+<a href="{{ url_for('index') }}" class="back-link">← Back to Users</a>
+
+<hr>
+
+{% if movies %}
+<ul class="movie-list">
+    {% for movie in movies %}
+    <li class="movie-entry">
+        {% if movie.poster_url and movie.poster_url != "N/A" %}
+        <img src="{{ movie.poster_url }}" alt="Poster" width="150">
+        {% endif %}
+
+        <!-- Update Movie Title -->
+        <form action="{{ url_for('update', user_id=movie.user_id, movie_id=movie.id) }}"
+              method="post"
+              class="update-form">
+
+            <input type="text"
+                   name="title"
+                   placeholder="{{ movie.name }}">
+
+            <button type="submit">Update</button>
+        </form>
+
+        <p><strong>Year:</strong> {{ movie.year }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+
+        <!-- Delete Movie -->
+        <form action="{{ url_for('delete', user_id=movie.user_id, movie_id=movie.id) }}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No movies added yet.</p>
+{% endif %}
+
+<hr>
+
+<h2>Add a New Movie</h2>
+
+<form action="{{ url_for('add_movie', user_id=request.view_args['user_id']) }}" method="post">
+    <input type="text" name="title" placeholder="Movie Title" required>
+    <input type="text" name="year" placeholder="Year (optional)">
+    <button type="submit">Add Movie</button>
+</form>
+
+{% endblock %}

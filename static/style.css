@@ -1,0 +1,228 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 40px;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3 {
+    margin-bottom: 15px;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ===== Links ===== */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    background-color: #4a90e2;
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: 0.2s ease;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #357abd;
+}
+
+button {
+    background-color: #4a90e2;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* ===== Forms ===== */
+form {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 250px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+}
+
+/* ===== User List ===== */
+.user-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.user-entry {
+    margin-bottom: 10px;
+}
+
+/* ===== Movie Cards ===== */
+.movie-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Individual movie card */
+.movie-entry {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+/* Fix input width inside movie cards */
+.movie-entry input[type="text"] {
+    width: 100%;
+    margin-right: 0;
+}
+
+.movie-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.movie-entry img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.movie-entry h3 {
+    margin-bottom: 10px;
+}
+
+.movie-entry p {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* ===== Divider ===== */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.back-link {
+    color: #000;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== User Cards Layout ===== */
+.user-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* Individual user card */
+.user-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* User name */
+.user-name {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* View Movies Button */
+.view-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #357abd;
+}
+
+/* Empty state */
+.no-users {
+    font-size: 16px;
+    color: #888;
+}
+
+/* ===== Update Form (Inline) ===== */
+.update-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.update-form input[type="text"] {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.update-form button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.update-form button:hover {
+    background-color: #357abd;
+}

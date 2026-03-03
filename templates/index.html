@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Users</h1>
+
+<ul class="user-list">
+    {% for user in users %}
+        <li class="user-card">
+            <h2 class="user-name">{{ user.name }}</h2>
+
+            <a href="{{ url_for('list_movies', user_id=user.id) }}"
+               class="view-btn">
+                View Movies
+            </a>
+        </li>
+    {% else %}
+        <li class="no-users">No users yet.</li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h2>Add New User</h2>
+
+<form action="{{ url_for('add_user') }}" method="post">
+    <input type="text" name="name" placeholder="User name" required>
+    <button type="submit">Add User</button>
+</form>
+
+{% endblock %}
